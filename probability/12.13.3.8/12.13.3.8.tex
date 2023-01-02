@@ -1,0 +1,38 @@
+\documentclass[10pt,column]{article}
+\usepackage{graphicx}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{mathtools}
+\title{\textbf{Probability Assignment}}
+\author{Sinkona Chinthamalla}
+
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+
+\begin{document}
+\maketitle
+
+\textbf{12.13.3.8 \\
+A factory has two machines A and B. Past record shows that machine A produced 60\% of the items of output and machine B produced 40\% of the items. Further, 2\% of the items produced by machine A were defective and 1\% produced by machine B were defective. All the items are put into one stockpile and then one item is chosen at random from this and is found to be defective. What is the probability that it was produced by machine B?}
+
+\subsection*{Solution}
+Let A $\in$ $\{0,1\}$ represent the random variables of an item produced and $D \cbrak{0,1}$ represent it being defective.
+
+From the given information,
+\begin{align}
+P(A=0) = 60 {\%} = 0.6\\
+P(A=1) = 40 {\%} =0.4
+\end{align}
+\begin{align}
+    P(D=1|A=0) = P(1|0) = 2 {\%} =0.02 \\
+    P(D=1|A=1) = P(1|1) = 1 {\%} =0.01
+\end{align}
+By Baye's theorem, 
+\begin{align}
+P(A=1|D=1)
+&= \frac{P(1)\times P(1|1)}{P(1)\times P(1|1) + P(0)\times P(1|0)} \vspace{0.1cm}\\
+&= \frac{0.4\times 0.01}{0.4\times 0.01 + 0.6\times 0.02} \vspace{0.1cm}\\
+&= 0.25
+\end{align}
+
+The probability that the defective item selected at random is produced by machine B is 25{\%}.
+
+\end{document}
