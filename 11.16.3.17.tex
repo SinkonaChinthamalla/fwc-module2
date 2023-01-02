@@ -1,0 +1,48 @@
+\documentclass[10pt,column]{article}
+\usepackage{graphicx}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{mathtools}
+\title{\textbf{Probability Assignment}}
+\author{Sinkona Chinthamalla}
+
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+
+\begin{document}
+\maketitle
+
+\textbf{11.16.3.17}\\
+A and B are events such that $\pr A=0.42, \pr B=0.48$ and $\pr {\text{A and B}}=0.16$. \\
+Determine 
+\begin{enumerate}
+\item $\pr{\text{not A}}$ 
+\item $\pr{\text{not B}}$  
+\item $\pr{\text{A or B}}$ 
+\end{enumerate}
+
+\subsection*{Solution}
+Given, \\
+$\pr A=0.42, \pr B=0.48$ and $\pr {\text{A and B}}=0.16$
+\begin{enumerate}
+\item $\pr{\text{not A}}$
+\begin{align}
+\pr{A^{\prime}} &= 1 - \pr A \\
+&= 1 - 0.42 \\
+&= 0.58 
+\end{align}
+
+\item $\pr{\text{not B}}$
+\begin{align}
+\pr{B^{\prime}} &= 1 - \pr B \\
+&= 1 - 0.48 \\
+&= 0.52
+\end{align}
+
+\item $\pr{\text{A or B}}$
+\begin{align}
+\pr{\text{A+B}} &= \pr A + \pr B - \pr {AB} \\
+&= 0.42 + 0.48 - 0.16 \\
+&= 0.74
+\end{align}
+\end{enumerate}
+
+\end{document}
