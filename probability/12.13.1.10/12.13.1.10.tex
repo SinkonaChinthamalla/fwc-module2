@@ -1,11 +1,15 @@
 \documentclass[10pt,twocolumn]{article}
 \usepackage[margin=0.5in]{geometry}
 \usepackage{mathtools}
+\usepackage{amssymb} 
 \title{\textbf{Probability Assignment}}
 \author{Sinkona Chinthamalla}
 
 \providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
 \providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
 
 \begin{document}
 \maketitle
@@ -19,39 +23,38 @@ A black and a red dice are rolled.
 
 \subsection*{Solution}
 \begin{enumerate}
-\item 
-Let $X_1 \in \brak{1,2,3,4,5,6}$ be a random variable representing the outcomes of red die.\\
-Let $X_2 \in \brak{1,2,3,4,5,6}$ be a random variable representing the outcomes of black die. \\
-We need the conditional probability of event $(X_1 + X_2 > 9)$ given that $(X_2 = 5)$ has occurred.
-$\Pr{\brak{\brak{X_1 + X_2 > 9}|\brak{X_2=5}}}$
-\begin{align}
-=\frac{\Pr{((X_1 + X_2 > 9)(X_2=5))}}{\Pr{\brak{X_2=5}}}
-\end{align}
-We have that,
+\item  {\em The Uniform Distribution: }Let $X_i \in \cbrak{1,2,3,4,5,6}, i = 1,2,$ be the random variables representing the outcome for each die.  Assuming the dice to be fair, the probability mass function (pmf) is expressed as 
 \begin{align}
 p_{X_i}(n) = \pr{X_i = n} = 
 \begin{cases}
-\frac{1}{6} & 1 \le n \le 6 \\
+\frac{1}{6} & 1 \le n \le 6
+\\
 0 & otherwise
 \end{cases}
 \end{align}
-Therefore using equation (2) we can write that, 
+The desired outcome is
 \begin{align}
-\Pr{(X_2=5)} = \frac{1}{6}
+X &= X_1 + X_2, \\
+\implies X &\in \cbrak{1,2,\dots,12}
 \end{align}
-From binomial distribution we can write ,
+
+\item {\em Convolution: } \\
+From (2)
 \begin{align}
-\Pr{(X_1 + X_2 > 9)}&= \Pr{(X_1 + X_2 =10)}+\Pr{(X_1 + X_2=11)} \\ 
-&= \binom{2}{1} \brak {\frac{1}{6}}\brak {\frac{5}{6}}+\binom{2}{2} \brak {\frac{1}{6}}^2\\
-&= \frac{11}{36}
+p_X(n) &= \pr{X_1 + X_2 > n} = \pr{X_1  > n -X_2} \\
+&= \sum_{k}^{}\pr{X_1  > n -k | X_2 = k}p_{X_2}(k)
 \end{align}
-The event ${((X_1 + X_2 > 9)(X_2=5))}$ is such that the sum is greater than 9 with a number 5. \\
-There are only two possible cases \{5,5\} and \{6,5\} out of 36 possible cases.\\
-Hence,
+after unconditioning. $\because X_1$ and $X_2$ are independent.
+Then,
 \begin{align}
-\Pr{((X_1 + X_2 > 9)(X_2=5))}=\frac{2}{36}
+p_X(n) &= \pr{X_1 + X_2 > 9} = \pr{X_1  > 9 -X_2} \\
+&= \pr{X_1  > 9 -k | X_2 = k}p_{X_2}(k) \\
+&= \frac{1}{6} \pr{X_1  > 9 -5 | X_2 = 5} \\
+&= \frac{1}{6} \pr{X_1 > 4} \\
+&= \frac{1}{6} (\pr{X_1 = 5} + \pr{X_1 = 6}) \\
+&= \frac{2}{36}
 \end{align}
-Substituting equations (3), (7) in (1), we get
+Conditional probability is given by,
 \begin{align}
 \begin{split}
 \Pr{\brak{\brak{X_1 + X_2 > 9}|\brak{X_2=5}}} &= 
@@ -59,53 +62,34 @@ Substituting equations (3), (7) in (1), we get
 &=\frac{1}{3}
 \end{split}
 \end{align}  
-Hence the probability of obtaining a sum greater than 9, with black die in a 5 is $\frac{1}{3}$. 
+Hence the probability of obtaining a sum greater than 9, when black die resulted in a 5 is $\frac{1}{3}$. 
 
-\item 
-Let $X_1 \in \brak{1,2,3,4,5,6}$ be a random variable representing the outcomes of black die.\\
-Let $X_2 \in \{1,2,3,4,5,6\}$ be a random variable representing the outcomes of red die. \\
-We need the conditional probability of event $(X_1 + X_2 = 8)$ given that $(X_2 < 4)$ has occurred.
-$\Pr{\brak{\brak{X_1 + X_2 = 8}|\brak{X_2 < 4}}}$
+\newpage
+\item  {\em The Uniform Distribution: }Let $X_i \in \cbrak{1,2,3,4,5,6}, i = 1,2,$ be the random variables representing the outcome for each die. 
+\item {\em Convolution: } \\
+From (2)
 \begin{align}
-=\frac{\Pr{((X_1 + X_2 = 8)((X_2 = 2)+(X_2 = 3)))}}{\Pr{\brak{(X_2 = 2)+(X_2 = 3)}}}
+p_X(n) &= \pr{X_1 + X_2 = n} = \pr{X_1  = n -X_2} \\
+&= \sum_{k}^{}\pr{X_1  = n -k | X_2 = k}p_{X_2}(k)
 \end{align}
-We have that,
+after unconditioning. $\because X_1$ and $X_2$ are independent.
+Then,
 \begin{align}
-\Pr{(X_1 + X_2 = n)} &= 
-\begin{cases}
-0 & n < 1
-\\
-\frac{n-1}{36} &  2 \le n \le  7
-\\
-\frac{13-n}{36} & 7 < n \le 12
-\\
-0 & n > 12
-\end{cases}
+p_X(n) &= \pr{X_1 + X_2 = 8} = \pr{X_1  = 8 -X_2} \\
+&= \pr{X_1  = 8 -k | X_2 < k}p_{X_2}(k) \\
+&= \frac{1}{6} \pr{X_1  = 8 -k | X_2 < 4} \\
+&= \frac{1}{6} (\pr{X_1 = 5} + \pr{X_1 = 6}) \\
+&= \frac{2}{36}
 \end{align}
-Therefore using equation (10) we can write that, 
-\begin{align}
-\Pr{(X_1 + X_2 = 8)} = \frac{5}{36}
-\end{align}
-From binomial distribution we can write ,
-\begin{align}
-\Pr{(X_2 < 4)}& = \Pr{(X_2=2)}+\Pr{(X_2=3)} \\ 
-&= \binom{2}{1} \brak {\frac{1}{6}}\brak {\frac{5}{6}}+\binom{2}{2} \brak {\frac{1}{6}}^2\\
-&= \frac{11}{36}
-\end{align}
-The event ${((X_1 + X_2 = 8)((X_2=2)+(X_2=3)))}$ is such that the sum is 8 with a number less than 4. \\
-There are only two possible cases \{5,3\} and \{6,2\} out of 36 possible cases.\\
-Hence,
-\begin{align}
-\Pr{((X_1 + X_2 = 8)((X_2=2)+(X_2=3)))}=\frac{2}{36}
-\end{align}
-Substituting equations (15) in (1), we get
+Conditional probability is given by,
 \begin{align}
 \begin{split}
-\Pr{\brak{\brak{X_1 + X_2 = 8}|\brak{X_2 <  4}}} &= 
-\frac{\frac{2}{36}}{\frac{1}{2}}\\
+\Pr{\brak{\brak{X_1 + X_2 = 8}|\brak{X_2<4}}} &= 
+\frac{\frac{2}{36}}{\frac{3}{6}}\\
 &=\frac{1}{9}
 \end{split}
 \end{align}  
+
 Hence the probability of obtaining the sum 8 when a number is less than 4 is $\frac{1}{9}$. 
 
 \end{enumerate}
