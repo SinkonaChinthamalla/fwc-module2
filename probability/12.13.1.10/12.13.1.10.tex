@@ -55,12 +55,11 @@ p_X(n) &= \pr{X_1 + X_2 > 9} = \pr{X_1  > 9 -X_2} \\
 &= \frac{2}{36}
 \end{align}
 From (1) and (11), Conditional probability of event $(X_1 + X_2 > 9)$ given that $(X_2 = 5)$ has occurred is,
+$\Pr{\brak{\brak{X_1 + X_2 > 9}|\brak{X_2=5}}}$ 
 \begin{align}
-\begin{split}
-\Pr{\brak{\brak{X_1 + X_2 > 9}|\brak{X_2=5}}} &= 
-\frac{\frac{2}{36}}{\frac{1}{6}}\\
+&=\frac{\Pr{((X_1 + X_2 > 9)(X_2=5))}}{\Pr{\brak{X_2=5}}}\\
+&=\frac{\frac{2}{36}}{\frac{1}{6}}\\
 &=\frac{1}{3}
-\end{split}
 \end{align}  
 Hence the probability of obtaining a sum greater than 9, when black die resulted in a 5 is $\frac{1}{3}$. 
 
@@ -80,15 +79,13 @@ p_X(n) &= \pr{X_1 + X_2 = 8} = \pr{X_1  = 8 -X_2} \\
 &= \frac{1}{6} (\pr{X_1 = 5} + \pr{X_1 = 6}) \\
 &= \frac{2}{36}
 \end{align}
-From (1) and (19), Conditional probability of event $(X_1 + X_2 = 8)$ given that $(X_2 < 4)$ has occurred is,
+From (1) and (21), Conditional probability of event $(X_1 + X_2 = 8)$ given that $(X_2 < 4)$ has occurred is,
+$\Pr{\brak{\brak{X_1 + X_2 = 8}|\brak{X_2<4}}}$ 
 \begin{align}
-\begin{split}
-\Pr{\brak{\brak{X_1 + X_2 = 8}|\brak{X_2<4}}} &= 
-\frac{\frac{2}{36}}{\frac{3}{6}}\\
-&=\frac{1}{9}
-\end{split}
-\end{align}  
-
+&= \frac{\Pr{((X_1 + X_2 = 8)(X_2 < 4))}}{\Pr{\brak{X_2 < 4}}} \\
+&= \frac{\frac{2}{36}}{\frac{3}{6}}\\
+&= \frac{1}{9}
+\end{align} 
 Hence the probability of obtaining the sum 8 when a number is less than 4 is $\frac{1}{9}$. 
 
 \end{enumerate}
