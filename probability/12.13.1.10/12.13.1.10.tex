@@ -22,30 +22,9 @@ A black and a red dice are rolled.
 \end{enumerate}
 
 \subsection*{Solution}
+Let $X_i \in \cbrak{1,2,3,4,5,6}, i = 1,2,$ be the random variables representing the outcome for each die.
 \begin{enumerate}
-\item  {\em The Uniform Distribution: }Let $X_i \in \cbrak{1,2,3,4,5,6}, i = 1,2,$ be the random variables representing the outcome for each die.  Assuming the dice to be fair, the probability mass function (pmf) is expressed as 
-\begin{align}
-p_{X_i}(n) = \pr{X_i = n} = 
-\begin{cases}
-\frac{1}{6} & 1 \le n \le 6
-\\
-0 & otherwise
-\end{cases}
-\end{align}
-The desired outcome is
-\begin{align}
-X &= X_1 + X_2, \\
-\implies X &\in \cbrak{1,2,\dots,12}
-\end{align}
-
-{\em Convolution: } \\
-From (2)
-\begin{align}
-p_X(n) &= \pr{X_1 + X_2 > n} = \pr{X_1  > n -X_2} \\
-&= \sum_{k}^{}\pr{X_1  > n -k | X_2 = k}p_{X_2}(k)
-\end{align}
-after unconditioning. $\because X_1$ and $X_2$ are independent.
-Then,
+\item Since $X_1$ and $X_2$ are independent,
 \begin{align}
 p_X(n) &= \pr{X_1 + X_2 > 9} = \pr{X_1  > 9 -X_2} \\
 &= \pr{X_1  > 9 -k | X_2 = k}p_{X_2}(k) \\
@@ -54,24 +33,16 @@ p_X(n) &= \pr{X_1 + X_2 > 9} = \pr{X_1  > 9 -X_2} \\
 &= \frac{1}{6} (\pr{X_1 = 5} + \pr{X_1 = 6}) \\
 &= \frac{2}{36}
 \end{align}
-From (1) and (11), Conditional probability of event $(X_1 + X_2 > 9)$ given that $(X_2 = 5)$ has occurred is,
-$\Pr{\brak{\brak{X_1 + X_2 > 9}|\brak{X_2=5}}}$ 
+Conditional probability of event $(X_1 > 4)$ given that $(X_2 = 5)$ has occurred is, \\
+$\Pr{\brak{\brak{X_1 > 4}|\brak{X_2=5}}}$ 
 \begin{align}
-&=\frac{\Pr{((X_1 + X_2 > 9)(X_2=5))}}{\Pr{\brak{X_2=5}}}\\
+&=\frac{\Pr{((X_1 > 4),(X_2=5))}}{\Pr{\brak{X_2=5}}}\\
 &=\frac{\frac{2}{36}}{\frac{1}{6}}\\
 &=\frac{1}{3}
 \end{align}  
 Hence the probability of obtaining a sum greater than 9, when black die resulted in a 5 is $\frac{1}{3}$. 
 
-\item  {\em The Uniform Distribution: }Let $X_i \in \cbrak{1,2,3,4,5,6}, i = 1,2,$ be the random variables representing the outcome for each die. \\
-{\em Convolution: } \\
-From (2)
-\begin{align}
-p_X(n) &= \pr{X_1 + X_2 = n} = \pr{X_1  = n -X_2} \\
-&= \sum_{k}^{}\pr{X_1  = n -k | X_2 = k}p_{X_2}(k)
-\end{align}
-after unconditioning. $\because X_1$ and $X_2$ are independent.
-Then,
+\item Since $X_1$ and $X_2$ are independent,
 \begin{align}
 p_X(n) &= \pr{X_1 + X_2 = 8} = \pr{X_1  = 8 -X_2} \\
 &= \pr{X_1  = 8 -k | X_2 < k}p_{X_2}(k) \\
@@ -79,14 +50,13 @@ p_X(n) &= \pr{X_1 + X_2 = 8} = \pr{X_1  = 8 -X_2} \\
 &= \frac{1}{6} (\pr{X_1 = 5} + \pr{X_1 = 6}) \\
 &= \frac{2}{36}
 \end{align}
-From (1) and (21), Conditional probability of event $(X_1 + X_2 = 8)$ given that $(X_2 < 4)$ has occurred is,
-$\Pr{\brak{\brak{X_1 + X_2 = 8}|\brak{X_2<4}}}$ 
+Conditional probability of event $((X_1 = 5)+ (X_1 = 6))$ given that $(X_2 < 4)$ has occurred is, \\
+$\Pr{\brak{\brak{(X_1 = 5) + (X_1 = 6)}|\brak{X_2<4}}}$ 
 \begin{align}
-&= \frac{\Pr{((X_1 + X_2 = 8)(X_2 < 4))}}{\Pr{\brak{X_2 < 4}}} \\
+&= \frac{\Pr{(((X_1 = 5) + (X_1 = 6)),(X_2 < 4))}}{\Pr{\brak{X_2 < 4}}} \\
 &= \frac{\frac{2}{36}}{\frac{3}{6}}\\
 &= \frac{1}{9}
 \end{align} 
 Hence the probability of obtaining the sum 8 when a number is less than 4 is $\frac{1}{9}$. 
-
 \end{enumerate}
 \end{document}
