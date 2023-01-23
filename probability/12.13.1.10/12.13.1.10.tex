@@ -40,6 +40,11 @@ A black and a red dice are rolled.
 Given, \\
 Black die resulted in a 5. 
 
+Conditional probability of event $(X_1 + X_2 > 9)$ given that $(X_1 = 5)$ has occurred is given by, 
+\begin{align}
+\Pr{\brak{\brak{X_1 + X_2 > 9}|\brak{X_1=5}}}
+&=\frac{\Pr{((X_1 + X_2 > 9),(X_1=5))}}{\Pr{\brak{X_1=5}}}
+\end{align}  
 The probability of obtaining a sum greater than 9 is given by,
 \begin{align}
 \Pr\brak{\brak{X_1 + X_2 > 9}, \brak{X_1 = 5}}
@@ -51,6 +56,7 @@ The probability of obtaining a sum greater than 9 is given by,
 &= \frac{1}{6} (\pr{X_2 = 5} + \pr{X_2 = 6}) \\
 &= \frac{2}{36}
 \end{align}
+From (1) and (8), \\
 Conditional probability of event $(X_2 > 4)$ given that $(X_1 = 5)$ has occurred is, 
 \begin{align}
 \Pr{\brak{\brak{X_2 > 4}|\brak{X_1=5}}}
@@ -63,6 +69,11 @@ Hence the conditional probability of obtaining a sum greater than 9, when black 
 \item Given, \\
 Red die resulted in a number less than 4. 
 
+Conditional probability of event $(X_1 + X_2 = 8)$ given that $(X_2 < 4)$ has occurred is given by, 
+\begin{align}
+\Pr{\brak{\brak{X_1 + X_2 = 8}|\brak{X_2<4}}} 
+&= \frac{\Pr{((X_1 + X_2 = 8),(X_2 < 4))}}{\Pr{\brak{X_2 < 4}}} 
+\end{align} 
 The probability of obtaining the sum 8 is given by,
 \begin{align}
 \Pr{\brak{\brak{X_1 + X_2 = 8},\brak{X_2<4}}} 
@@ -73,6 +84,7 @@ The probability of obtaining the sum 8 is given by,
 &= \frac{1}{6} (\pr{X_1 = 5} + \pr{X_1 = 6}) \\
 &= \frac{2}{36}
 \end{align}
+From (12) and (18), \\
 Conditional probability of event $(X_1 + X_2 = 8)$ given that $(X_2 < 4)$ has occurred is, 
 \begin{align}
 \Pr{\brak{\brak{X_1 + X_2 = 8}|\brak{X_2<4}}} 
