@@ -42,8 +42,8 @@ Black die resulted in a 5.
 
 The probability of obtaining a sum greater than 9 is given by,
 \begin{align}
-\Pr{\brak{\brak{X_2 > 4},\brak{X_1=5}}}
-&= \pr{X_1 + X_2 > 9} \\
+\Pr\brak{\brak{X_1 + X_2 > 9}, \brak{X_1 = 5}}
+&= \pr{X_1 + X_2  > 9} \\
 &= \pr{X_2  > 9 -X_1} \\
 &= \pr{X_2  > 9 -k | X_1 = k}p_{X_1}(k) \\
 &= \frac{1}{6} \pr{X_2  > 9 -5 | X_1 = 5} \\
@@ -54,7 +54,7 @@ The probability of obtaining a sum greater than 9 is given by,
 Conditional probability of event $(X_2 > 4)$ given that $(X_1 = 5)$ has occurred is, 
 \begin{align}
 \Pr{\brak{\brak{X_2 > 4}|\brak{X_1=5}}}
-&=\frac{\Pr{((X_2 > 4),(X_1=5))}}{\Pr{\brak{X_1=5}}}\\
+&=\frac{\Pr{((X_1 + X_2 > 9),(X_1=5))}}{\Pr{\brak{X_1=5}}}\\
 &=\frac{\frac{2}{36}}{\frac{1}{6}}\\
 &=\frac{1}{3}
 \end{align}  
