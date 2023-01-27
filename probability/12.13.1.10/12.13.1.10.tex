@@ -47,16 +47,15 @@ Conditional probability of event $(X_1 + X_2 > 9)$ given that $(X_1 = 5)$ has oc
 \end{align}  
 The probability of obtaining a sum greater than 9 is given by,
 \begin{align}
-\Pr\brak{\brak{X_1 + X_2 > 9}, \brak{X_1 = 5}}
-&= \pr{X_1 + X_2  > 9} \\
-&= \pr{X_2  > 9 -X_1} \\
+\Pr\brak{\brak{X_1 + X_2 > 9}, \brak{X_1 = 5}} 
+&= \Pr\brak{\brak{X_2 > 9 - X_1}, \brak{X_1 = 5}} \\
 &= \pr{X_2  > 9 -k | X_1 = k}p_{X_1}(k) \\
 &= \frac{1}{6} \pr{X_2  > 9 -5 | X_1 = 5} \\
 &= \frac{1}{6} \pr{X_2 > 4} \\
 &= \frac{1}{6} (\pr{X_2 = 5} + \pr{X_2 = 6}) \\
 &= \frac{2}{36}
 \end{align}
-From (1) and (8), \\
+From (1) and (7), \\
 Conditional probability of event $(X_2 > 4)$ given that $(X_1 = 5)$ has occurred is, 
 \begin{align}
 \Pr{\brak{\brak{X_2 > 4}|\brak{X_1=5}}}
@@ -77,14 +76,13 @@ Conditional probability of event $(X_1 + X_2 = 8)$ given that $(X_2 < 4)$ has oc
 The probability of obtaining the sum 8 is given by,
 \begin{align}
 \Pr{\brak{\brak{X_1 + X_2 = 8},\brak{X_2<4}}} 
-&= \pr{X_1 + X_2 = 8} \\
-&= \pr{X_1  = 8 -X_2} \\
+&= \Pr{\brak{\brak{X_1 = 8 - X_2},\brak{X_2<4}}} \\
 &= \pr{X_1  = 8 -k | X_2 < k}p_{X_2}(k) \\
 &= \frac{1}{6} \pr{X_1  = 8 -k | X_2 < 4} \\
 &= \frac{1}{6} (\pr{X_1 = 5} + \pr{X_1 = 6}) \\
 &= \frac{2}{36}
 \end{align}
-From (12) and (18), \\
+From (11) and (16), \\
 Conditional probability of event $(X_1 + X_2 = 8)$ given that $(X_2 < 4)$ has occurred is, 
 \begin{align}
 \Pr{\brak{\brak{X_1 + X_2 = 8}|\brak{X_2<4}}} 
